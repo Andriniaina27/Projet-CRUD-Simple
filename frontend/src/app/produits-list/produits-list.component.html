@@ -1,0 +1,7 @@
+<h1>Liste des produits</h1>
+<a href="/produits/add">Ajouter un produit</a>
+<ul>
+  <li *ngFor="let p of produits()">
+    {{ p.nom }} - {{ p.prix }} € - {{ p.en_stock ? 'En stock' : 'Rupture' }}
+  </li>
+</ul>

@@ -1,0 +1,15 @@
+<a href="/produits">Liste des produits</a>
+
+<form (ngSubmit)="ajouterProduit()" #produitForm="ngForm">
+  <input type="text" [ngModel]="nom()" name="nom" placeholder="Nom" required>
+
+  <input type="number" [ngModel]="prix()" name="prix" placeholder="Prix" required>
+
+  <label>
+    <input type="checkbox" [ngModel]="en_stock()" name="en_stock">
+    En stock
+  </label>
+
+  <button type="submit" class="btn btn-primary">Ajouter</button>
+
+</form>
