@@ -1,7 +1,26 @@
-<h1>Liste des produits</h1>
-<a href="/produits/add">Ajouter un produit</a>
-<ul>
-  <li *ngFor="let p of produits()">
-    {{ p.nom }} - {{ p.prix }} € - {{ p.en_stock ? 'En stock' : 'Rupture' }}
-  </li>
-</ul>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+      <h1>Liste des produits</h1>
+      <a href="/produits/add" class="btn btn-primary"> Ajouter un produit </a>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <th>Désignation</th>
+            <th>Prix</th>
+            <th>Status</th>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let p of produits()" >
+              <td>{{ p.nom }}</td>
+              <td>{{ p.prix }} </td>
+              <td>{{  p.en_stock ? 'En stock' : 'Rupture' }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
