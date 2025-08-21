@@ -1,0 +1,30 @@
+<a href="/produits">Liste des produits</a>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+      <h2 class="text-primary">Ajouter un produit</h2>
+      <a href="/produits" class="btn btn-primary">Liste des produits</a>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="ajouterProduit()">
+        <div class="mb-3">
+          <label class="form-label">Nom</label>
+          <input type="text" class="form-control" [(ngModel)]="nom" name="nom">
+        </div>
+    
+        <div class="mb-3">
+          <label class="form-label">Prix</label>
+          <input type="number" class="form-control" [(ngModel)]="prix" name="prix">
+        </div>
+    
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" [(ngModel)]="en_stock" name="en_stock">
+          <label class="form-check-label">En stock</label>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>
+  </div>
+</div>
+

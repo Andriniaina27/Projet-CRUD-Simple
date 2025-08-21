@@ -1,0 +1,11 @@
+<h1>{{ title() }}</h1>
+
+<div *ngIf="erreur()">
+  <p style="color:red">{{ erreur() }}</p>
+</div>
+
+<ul>
+  <li *ngFor="let p of produits()">
+    {{ p.nom }} - {{ p.prix }} € - {{ p.en_stock ? 'En stock' : 'Rupture' }}
+  </li>
+</ul>
