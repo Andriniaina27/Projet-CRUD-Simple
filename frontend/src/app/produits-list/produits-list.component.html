@@ -11,6 +11,7 @@
             <th>Désignation</th>
             <th>Prix</th>
             <th>Status</th>
+<<<<<<< HEAD
             <th>Action</th>
           </thead>
           <tbody>
@@ -22,6 +23,14 @@
                 <a href="" class="btn btn-danger" style="margin: 0 .5rem;" (click)="supprimerProduit(produit.id)">Supprimer</a>
                 <a href="" class="btn btn-primary" style="margin: 0 .5rem;"> Modifier</a>
               </td>
+=======
+          </thead>
+          <tbody>
+            <tr *ngFor = "let p of produits()" >
+              <td>{{ p.nom }}</td>
+              <td>{{ p.prix }} </td>
+              <td>{{  p.en_stock ? 'En stock' : 'Rupture' }} </td>
+>>>>>>> 552007edcdd6838351018d3a3348646068d610e4
             </tr>
           </tbody>
         </table>
