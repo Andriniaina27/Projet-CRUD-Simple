@@ -11,12 +11,17 @@
             <th>Désignation</th>
             <th>Prix</th>
             <th>Status</th>
+            <th>Action</th>
           </thead>
           <tbody>
-            <tr *ngFor = "let p of produits()" >
-              <td>{{ p.nom }}</td>
-              <td>{{ p.prix }} </td>
-              <td>{{  p.en_stock ? 'En stock' : 'Rupture' }} </td>
+            <tr *ngFor = "let produit of produits" >
+              <td>{{ produit.nom }}</td>
+              <td>{{ produit.prix }} </td>
+              <td>{{  produit.en_stock ? 'En stock' : 'Rupture' }} </td>
+              <td width="300">
+                <a href="" class="btn btn-danger" style="margin: 0 .5rem;" (click)="supprimerProduit(produit.id)">Supprimer</a>
+                <a href="" class="btn btn-primary" style="margin: 0 .5rem;"> Modifier</a>
+              </td>
             </tr>
           </tbody>
         </table>

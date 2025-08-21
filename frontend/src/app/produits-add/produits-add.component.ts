@@ -11,25 +11,27 @@ import { Router } from '@angular/router';
   templateUrl: './produits-add.component.html'
 })
 export class ProduitAddComponent {
-  nom = signal('');
-  prix = signal<number | null>(null);
-  en_stock = signal(true);
+  nom: string = '';
+  prix: number | null = null;
+  en_stock: boolean = true;
 
   constructor(private produitService: ProduitService, private router: Router) {}
 
   ajouterProduit() {
-    if (!this.nom() || this.prix() === null) return;
+    if (!this.nom || this.prix === null) return;
 
     const newProduit: Produit = {
       id: 0,
-      nom: this.nom(),
-      prix: this.prix()!,
-      en_stock: this.en_stock()
+      nom: this.nom,
+      prix: this.prix,
+      en_stock: this.en_stock
     };
 
     this.produitService.createProduit(newProduit).subscribe({
       next: () => this.router.navigate(['/produits']),
-      error: () => console.error('Erreur création :', ),
+      error: (err) => console.error('Erreur création :', err),
     });
   }
 }
+
+
